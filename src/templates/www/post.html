@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post</title>
+</head>
+<body>
+	<h2>{{ post.title }}</h2>
+	<i>By {{ post.user_create.username }}</i>
+	In {{ post.category }}
+	<p>{{ post.content }}</p>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<h2>Related Posts</h2>
+	{% for p in related_posts %}
+		<a href="/blog/{{ p.slug }}/"><h2>{{ p.title }}</h2></a>
+		<i>{{ p.category }}</i>
+		<p>{{ p.content }}</p>
+		<br>
+	{% endfor %}
+</body>
+</html>
